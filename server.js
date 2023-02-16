@@ -25,10 +25,16 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => console.log('Connected to Mongoose'));
 
-
+// Default route that checks if server is working
 app.get('/', (req, res) => res.status(200).send('Welcome to our Library'));
 
+
+// GET
 app.get('/books', bookHandler.getBooks);
-app.post('/books', bookHandler.postBooks);
+// POST
+app.post('/books', bookHandler.postBook);
+// DELETE
+app.delete('/books/:id', bookHandler.deleteBook);
+
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
