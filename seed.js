@@ -5,7 +5,7 @@ require('dotenv').config();
 
 mongoose.connect(process.env.MONGODB_URL);
 
-const Book = require('./schema/book');
+const Book = require('./model/book');
 
 const seed = async () => {
 

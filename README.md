@@ -27,12 +27,11 @@ Can Of Books backend is a server that houses all of the data from MondoDB and th
 
 ## Change Log
 
-11-02-2023 5:30pm - We created the base server. 
+11-02-2023 5:30pm - We created the base server.
 11-02-2023 6:30pm - Created Schema & Model for books
 11-02-2023 7:00pm - Create books and saved to MongoDB collection. Created route.
-
-## Estimates
-<!-- See below -->
+15-02-2023 7:59pm - Created new post route to create a new book.
+15-02-2023 8:14pm - Created new delete route to delete a book.
 
 ## Credit and Collaborations
 
