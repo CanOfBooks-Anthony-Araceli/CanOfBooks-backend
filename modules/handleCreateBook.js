@@ -28,4 +28,14 @@ handleCreateBook.deleteBook = function(req, res, next){
     .catch(err => next(err));
 }
 
+// Function that updates a book 
+handleCreateBook.putBook = function(req, res, next){
+  const id = req.params.id;
+  const data = req.body;
+  Books.findByIdAndUpdate(id, data, {new: true, overwrite: true})
+    .then(updatedBook => res.status(200).send(updatedBook))
+    .catch(err => next(err))
+}
+
+
 module.exports = handleCreateBook;
