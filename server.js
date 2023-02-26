@@ -4,6 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const verifyUser = require('./authorize')
 // const getBooks = require('./books/getBooks'); - no longer needed because bookHandler contains our function
 const bookHandler = require('./modules/handleCreateBook')
 
@@ -13,6 +14,7 @@ app.use(cors());
 
 //using express.json to be able to use req.body data
 app.use(express.json());
+app.use(verifyUser);
 
 
 const PORT = process.env.PORT || 3002;

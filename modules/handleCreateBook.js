@@ -6,7 +6,7 @@ const handleCreateBook = {};
 
 // Function that gets book data in json format
 handleCreateBook.getBooks = function(req, res, next) {
-  let queryObject = {};
+  let queryObject = {email: req.user.email};
   Books.find(queryObject)
     .then(data => res.status(200).send(data))
     .catch(error => console.error(error));
@@ -15,7 +15,7 @@ handleCreateBook.getBooks = function(req, res, next) {
 // Function that creates a new book
 handleCreateBook.postBook = function(req, res, next){
   const data = req.body;
-  Books.create(data)
+  Books.create({...data, email: req.user.email})
     .then(createdBook => res.status(201).send(createdBook))
     .catch(err => next(err));
 }
