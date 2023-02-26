@@ -8,6 +8,7 @@ const bookSchema = new Schema({
   title: String,
   desc: String,
   status: Boolean,
+  email: String,
 })
 
 module.exports = mongoose.model('Book', bookSchema);
